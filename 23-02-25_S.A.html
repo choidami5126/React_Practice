@@ -37,9 +37,16 @@
             // let text_list = [text, text2, text3]
             
             if(text == '' || text2 == '' || text3 == '') {
-                alert('입력칸을 작성해주세요');
+                Swal.fire({
+                    icon: 'error',
+                    title: '실패',
+                    text: '빈칸을 채워주세요!',
+                    })
             } else {
-                alert('제출 완료!')
+                Swal.fire({
+                    icon: 'success',
+                    title: '제출 완료!',
+                    })
             }
         }
     </script>
