@@ -1,38 +1,116 @@
-.App {
-  text-align: center;
-}
+.layout {
+  width: 95%;
+  max-width: 1200px;
+  min-width: 800px;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+  margin: auto;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.infobar {
+  width: 95%;
+  max-width: 1000px;
+  min-width: 800px;
+  height: 50px;
+
+  margin-top: 30px;
+
+  border: 2px solid black;
+  border-radius: 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  word-spacing: 850px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.inputbar {
+  width: 95%;
+  max-width: 1000px;
+  min-width: 800px;
+  height: 80px;
+
+  margin-top: 20px;
+
+  border: 2px solid black;
+  border-radius: 15px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  gap: 100px;
+}
+
+.todotop {
+  width: 95%;
+  max-width: 1000px;
+  min-width: 800px;
+  height: 30px;
+
+  margin-top: 20px;
+
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.todoarea {
+  width: 95%;
+  max-width: 1000px;
+  min-width: 800px;
+  /* height: 300px; */
+  min-height: none;
+
+  margin-top: 10px;
+
+  border: 2px solid black;
+  border-radius: 15px;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.todobox {
+  width: 200px;
+  height: 200px;
+
+  padding: 20px;
+  margin: 20px;
+
+  border: 2px solid black;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+.donetop {
+  width: 95%;
+  max-width: 1000px;
+  min-width: 800px;
+  height: 30px;
+
+  margin-top: 20px;
+
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.donearea {
+  width: 95%;
+  max-width: 1000px;
+  min-width: 800px;
+  height: 300px;
+
+  margin-top: 10px;
+
+  border: 2px solid black;
+  border-radius: 15px;
 }
