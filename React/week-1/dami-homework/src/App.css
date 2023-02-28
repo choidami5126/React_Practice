@@ -1,0 +1,88 @@
+.MainLayout {
+  width: 95%;
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.TopBar {
+  width: 95%;
+  max-width: 1000px;
+  height: 50px;
+
+  margin-top: 30px;
+  padding: 20px;
+
+  border: 2px solid black;
+  border-radius: 20px;
+
+  word-spacing: 850px;
+
+  display: flex;
+  flex-direction: low;
+  align-items: center;
+  justify-content: center;
+}
+
+.InputBar {
+  width: 95%;
+  max-width: 1000px;
+  height: 80px;
+
+  margin-top: 30px;
+
+  border: 2px solid black;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: low;
+  align-items: center;
+  justify-content: center;
+
+  gap: 100px;
+}
+
+.RunningArea {
+  width: 95%;
+  max-width: 1000px;
+  height: 300px;
+  margin-top: 30px;
+
+  border: 2px solid black;
+
+  display: flex;
+}
+
+.DoneArea {
+  width: 95%;
+  max-width: 1000px;
+  height: 300px;
+  margin-top: 30px;
+
+  border: 2px solid black;
+
+  display: flex;
+}
+
+.todolist {
+  width: 200px;
+  height: 200px;
+
+  margin: 30px;
+
+  border: 2px solid black;
+}
+
+.donelist {
+  width: 200px;
+  height: 200px;
+
+  margin: 30px;
+
+  border: 2px solid black;
+}
