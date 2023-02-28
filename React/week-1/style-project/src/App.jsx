@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import './App.css';
+import './App.css'
+import Button from "./component/Button";
+import User from "./component/User";
 
 const App = () => {
 
@@ -27,9 +29,13 @@ const App = () => {
       age,
       name,
     }
-
     setUsers([...users, addInfo])
   };
+
+  const clickRemoveButtonHandler = (id) => {
+    const newUsers = users.filter((user) => user.id !== id);
+    setUsers(newUsers)
+  }
 
   return (
     <div>
@@ -44,16 +50,16 @@ const App = () => {
           value={age}
           onChange={ageChangeHandler}
         /> <br />
-      </div>
-      <div>
-        <button onClick={clickAddButtonHandler}>추가</button>
+        <Button clickAddButtonHandler={clickAddButtonHandler}/>
       </div>
       <div className="app-style">
         {
           users.map((item) => {
             return (
-              <div key={item.id} className="component-style">
-                {item.age} - {item.name}</div>
+              <User
+              item={item}
+              removeFunction={clickRemoveButtonHandler}
+              />
             )
           })
         }
