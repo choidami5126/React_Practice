@@ -14,11 +14,11 @@ const App = () => {
   const [age, setAge] = useState('');
 
   const nameChangeHandler = (event) => {
-    setName(event.target.value)
+    setName(event.target.value);
   }
 
   const ageChangeHandler = (event) => {
-    setAge(event.target.value)
+    setAge(event.target.value);
   }
 
   const clickAddButtonHandler = () => {
@@ -28,7 +28,7 @@ const App = () => {
       name,
     }
 
-    setUsers([...users, {addInfo}])
+    setUsers([...users, addInfo])
   };
 
   return (
