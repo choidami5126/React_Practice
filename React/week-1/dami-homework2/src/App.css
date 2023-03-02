@@ -105,8 +105,7 @@
   height: 230px;
   max-height: 230px;
 
-  word-break: normal;
-  white-space: normal;
+  word-wrap: break-word;
   overflow: auto;
 }
 
@@ -161,8 +160,7 @@
   height: 230px;
   max-height: 230px;
 
-  word-break: normal;
-  white-space: normal;
+  word-wrap: break-word;
   overflow: auto;
 }
 
