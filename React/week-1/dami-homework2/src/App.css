@@ -103,7 +103,7 @@
 
 .todo_comment {
   height: 230px;
-  max-height: 230px;
+  width: 270px;
 
   word-wrap: break-word;
   overflow: auto;
@@ -157,7 +157,7 @@
 
 .done_comment {
   height: 230px;
-  max-height: 230px;
+  width: 270px;
 
   word-wrap: break-word;
   overflow: auto;
