@@ -21,6 +21,7 @@
 
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
@@ -79,19 +80,18 @@
 .todoarea {
   width: 95%;
   max-width: 1000px;
-  min-width: 500px;
+  min-width: none;
 
   margin-top: 10px;
 
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: left;
 }
 
 .todobox {
-  width: calc((100% - 60px) / 3);
-  height: 313.333px;
+  min-width: calc((100% - 60px) / 3);
+  min-height: 313.333px;
 
   padding: 20px;
   margin: 10px;
@@ -115,7 +115,6 @@
   margin-top: 10px;
 
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
 
@@ -145,8 +144,8 @@
 }
 
 .donebox {
-  width: calc((100% - 60px) / 3);
-  height: 313.333px;
+  min-width: calc((100% - 60px) / 3);
+  min-height: 313.333px;
 
   padding: 20px;
   margin: 10px 10px 30px 10px;

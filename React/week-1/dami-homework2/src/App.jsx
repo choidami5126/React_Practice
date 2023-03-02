@@ -28,7 +28,6 @@ function App() {
     setTodo_list([...todo_list, sudmit])
     resetBlank()
   }
-  console.log(todo_list)
 
   const removeButtonHandler = (id) => {
     const remove_todo_list = todo_list.filter((item) => item.id !== id)
@@ -142,3 +141,7 @@ export default App
   /* <input type='text' maxlength='5' />
 .selector {word-break:break-all;} */
 }
+
+//키값 유니크하게 주기
+//로직과 뷰 분리
+// 효율적인 부모<>자식 컴포넌트 분리 리렌더링 최소화
