@@ -137,3 +137,8 @@ function App() {
 
 export default App
 // const uuidv4 = require('uuid/v4')
+
+{
+  /* <input type='text' maxlength='5' />
+.selector {word-break:break-all;} */
+}
