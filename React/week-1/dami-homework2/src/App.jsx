@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import ToDoArea from './components/ToDoArea'
 
 function App() {
   const [todo_list, setTodo_list] = useState([])
@@ -15,7 +16,7 @@ function App() {
   }
 
   const inputButtonHandler = () => {
-    const randomBytes = new Uint8Array(16)
+    const randomBytes = new Uint8Array(20)
     window.crypto.getRandomValues(randomBytes)
 
     const sudmit = {
@@ -39,14 +40,6 @@ function App() {
     setDone_list([...done_list, done_item])
     removeButtonHandler(id)
   }
-
-  // const doneButtonHandler = (id) => {
-  //   const done_item = todo_list.find((item) => item.id === id)
-  //   done_item.done = true
-  //   setDone_list([...done_list, done_item])
-  //   removeButtonHandler(id)
-  // }
-  // done 값을 수정하여, todo, done 수정하기
 
   const done_removeButtonHandler = (id) => {
     const remove_done_list = done_list.filter((item) => item.id !== id)
@@ -98,29 +91,18 @@ function App() {
           <b>Doing...🏃</b>
         </h3>
       </div>
-      <div className="todoarea">
-        {todo_list.map((item) => {
-          return (
-            <div className="todobox">
-              <div className="todo_comment">
-                <h4>
-                  <b>{item.title}</b>
-                </h4>
-                <br />
-                <h5>{item.comment}</h5>
-              </div>
-              <div className="todo_button">
-                <button type="button" className="btn btn-outline-success" onClick={() => doneButtonHandler(item.id)}>
-                  성공
-                </button>
-                <button type="button" className="btn btn-outline-danger" onClick={() => removeButtonHandler(item.id)}>
-                  삭제
-                </button>
-              </div>
-            </div>
-          )
-        })}
-      </div>
+      <ToDoArea
+        todo_list={todo_list}
+        doneButtonHandler={doneButtonHandler}
+        removeButtonHandler={removeButtonHandler}
+        // key={item.id}
+        // item={item}
+      />
+      {/* <div className="todoarea">
+        {todo_list.map((item) => (
+          <Todobox key={item.id} item={item} doneButtonHandler={doneButtonHandler} removeButtonHandler={removeButtonHandler} />
+        ))}
+      </div> */}
       <div className="donetop">
         <h3>
           <b>Done 🏆</b>
@@ -152,28 +134,6 @@ function App() {
     </div>
   )
 }
-
-// const addtodocard = {done_list.map((item) => {
-//           return (
-//             <div className="donebox">
-//               <div className="done_comment">
-//                 <h4>
-//                   <b>{item.title}</b>
-//                 </h4>
-//                 <br />
-//                 <h5>{item.comment}</h5>
-//               </div>
-//               <div className="done_button">
-//                 <button type="button" className="btn btn-outline-secondary" onClick={() => cancelButtonHandler(item.id)}>
-//                   취소
-//                 </button>
-//                 <button type="button" className="btn btn-outline-danger" onClick={() => done_removeButtonHandler(item.id)}>
-//                   삭제
-//                 </button>
-//               </div>
-//             </div>
-//           )
-// }
 
 export default App
 // const uuidv4 = require('uuid/v4')
