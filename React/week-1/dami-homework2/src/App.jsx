@@ -10,6 +10,7 @@ function App() {
 
   const inputTitleHandler = (event) => setTitle(event.target.value)
   const inputCommentHandler = (event) => setComment(event.target.value)
+
   const resetBlank = () => {
     setTitle('')
     setComment('')
@@ -63,7 +64,7 @@ function App() {
       </div>
       <form className="form">
         <div className="form-group">
-          <label htmlfor="exampleInputEmail1">
+          <label htmlFor="exampleInputEmail1">
             <h4>
               <b>목표</b>
             </h4>
@@ -71,7 +72,7 @@ function App() {
           <input type="text" className="form-control" id="exampleInputEmail1" value={title} onChange={inputTitleHandler} />
         </div>
         <div className="form-group">
-          <label htmlfor="exampleInputPassword1">
+          <label htmlFor="exampleInputPassword1">
             <br />
             <h4>
               <b>내용</b>
