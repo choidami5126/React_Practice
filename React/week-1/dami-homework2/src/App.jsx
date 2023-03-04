@@ -16,7 +16,7 @@ function App() {
   }
 
   const inputButtonHandler = () => {
-    const randomBytes = new Uint8Array(20)
+    const randomBytes = new Uint8Array(30) // typedarray
     window.crypto.getRandomValues(randomBytes)
 
     const sudmit = {
@@ -28,7 +28,7 @@ function App() {
     setTodo_list([...todo_list, sudmit])
     resetBlank()
   }
-
+  console.log(todo_list)
   const removeButtonHandler = (id) => {
     const remove_todo_list = todo_list.filter((item) => item.id !== id)
     setTodo_list(remove_todo_list)
@@ -94,6 +94,7 @@ function App() {
         todo_list={todo_list}
         doneButtonHandler={doneButtonHandler}
         removeButtonHandler={removeButtonHandler}
+        c
         // key={item.id}
         // item={item}
       />
