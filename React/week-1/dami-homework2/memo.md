@@ -152,10 +152,88 @@ index.js > render 아래
 
 초기 상태값 initialState(이렇게 많이 지음)
 
-// 리듀서 : 함수
+// 리듀서 : state에 변화를 일으키는 함수(state를 action에 type에 따라 변경하는 함수)
 // input : state와 action 를 인자로 받음 redux 하면서 계속 나올 예정
 const counter = (state = initialState, action) => {
 
 }
 
 // action = state를 어떻게 할 것인지 정하는 객체
+
+useSelector
+
+<1-15>
+
+dispatch
+
+<1-16>
+휴먼에러를 방지하고자 타이핑 내용을 변수에 할당해 관리
+action creator
+
+<1-17>
+payload : 전달되는 어떠한 실체
+payload 만큼을 타입에 맞게 처리한다
+action 객체를 store로 dispatch가 던진다
+
+<1-18>
+ducks 패턴
+
+1. Reducer 함수를 export default 한다.
+2. Action creator 함수들을 export 한다.
+
+<1-19>
+react router dom
+
+yarn add react-router-dom
+
+import {BrowserRouter, Route, Routes}
+<BrowserRouter>
+<Routes>
+<Route>
+</Routse>
+</BrowserRouter>
+
+위 형태로 감싸는 것이 기본(== 보일러 플레이트)
+
+외우자!
+
+App.jsx에 불러올 때 경로를 잘 확인하기(react 제공이 아닌 만든 것을 가져와야 함)
+
+useNavigate 페이지 전환하는 react router dome hook 활용도 높음
+
+useLocation
+
+Link : hook은 아님 꼭 알아야할 API임 / a태그를 대체함 / useNavigate와 유사하지만 목적이 다르다
+
+useParams
+
+<1-20>
+<1-19>는 정적 라우팅
+
+동적라우팅 Dynamic Route
+
+&nbsp;
+
+파라미터를 사용한다 :value
+이때 useParams 를 사용한다
+
+<1-21> > 정신이 나가버림
+다시 돌아온 동기, 비동기
+
+Promise
+
+ES6 then~catch
+ES7 async / await
+
+<1-22> > 정신을 잃음
+REST API
+
+<1-23> > 혼수 상태
+JSON : JS 객체 문법에 토대를 둔 문자 기반 데이터 교환 방식
+JSON은 ""만 허용됨
+
+stringify() : JS 객체 > JSON 문자열로 변환(스트링 화를 시킨다.)
+
+parse() : JSON 문자열을 JS 객체로 변환
+
+JSON placeholder : 프론트 엔드를 테스트 해보기 위한 가짜서버
