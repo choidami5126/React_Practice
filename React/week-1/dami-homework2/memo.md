@@ -237,3 +237,7 @@ stringify() : JS 객체 > JSON 문자열로 변환(스트링 화를 시킨다.)
 parse() : JSON 문자열을 JS 객체로 변환
 
 JSON placeholder : 프론트 엔드를 테스트 해보기 위한 가짜서버
+
+toolkit
+
+React 쿼리
