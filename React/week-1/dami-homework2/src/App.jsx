@@ -91,19 +91,7 @@ function App() {
           <b>Doing...🏃</b>
         </h3>
       </div>
-      <ToDoArea
-        todo_list={todo_list}
-        doneButtonHandler={doneButtonHandler}
-        removeButtonHandler={removeButtonHandler}
-        c
-        // key={item.id}
-        // item={item}
-      />
-      {/* <div className="todoarea">
-        {todo_list.map((item) => (
-          <Todobox key={item.id} item={item} doneButtonHandler={doneButtonHandler} removeButtonHandler={removeButtonHandler} />
-        ))}
-      </div> */}
+      <ToDoArea todo_list={todo_list} doneButtonHandler={doneButtonHandler} removeButtonHandler={removeButtonHandler} />
       <div className="donetop">
         <h3>
           <b>Done 🏆</b>
