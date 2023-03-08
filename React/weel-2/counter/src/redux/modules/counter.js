@@ -1,3 +1,36 @@
+// action value
+const PLUS_ONE = 'counter/PLUS_ONE'
+const MINUS_ONE = 'counter/MINUS_ONE'
+const PLUS_N = 'counter/PLUS_N'
+const MINUS_N = 'counter/MINUS_N'
+
+// action creater : action value를 리턴하는 함수
+export const plusOne = () => {
+  return {
+    type: PLUS_ONE,
+  }
+}
+
+export const minusOne = () => {
+  return {
+    type: MINUS_ONE,
+  }
+}
+
+export const plusN = (payload) => {
+  return {
+    type: PLUS_N,
+    payload,
+  }
+}
+
+export const minusN = (payload) => {
+  return {
+    type: MINUS_N,
+    payload,
+  }
+}
+
 const initialState = {
   number: 0,
 }
@@ -10,13 +43,21 @@ const counter = (state = initialState, action) => {
   // action : state를 어떻게 수정할 것인지 표현하는 객체
   switch (action.type) {
     // action에 있는 type에 따라서 어떤 작업을 수행할 것이다.
-    case 'PLUS_ONE':
+    case PLUS_ONE:
       return {
         number: state.number + 1,
       }
-    case 'MINUS_ONE':
+    case MINUS_ONE:
       return {
         number: state.number - 1,
+      }
+    case PLUS_N:
+      return {
+        number: state.number + action.payload,
+      }
+    case MINUS_N:
+      return {
+        number: state.number - action.payload,
       }
     // 객체 형태를 맞춰줘야함
     default:
