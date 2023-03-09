@@ -2,6 +2,7 @@
 const ADD_TODO = 'app/todos/ADD_TODO'
 const DELETE_TODO = 'app/todos/DELETE_TODO'
 const DONE_TODO = 'app/todos/DONE_TODO'
+const GET_TODO_BY_ID = 'app/todos/GET_TODO_BY_ID'
 
 //action value/ action creator  / initialState // reducer
 
@@ -22,6 +23,13 @@ export const deleteTodo = (payload) => {
 export const doneTodo = (payload) => {
   return {
     type: DONE_TODO,
+    payload,
+  }
+}
+
+export const getTodo = (payload) => {
+  return {
+    type: GET_TODO_BY_ID,
     payload,
   }
 }
@@ -67,6 +75,14 @@ const todos = (state = initialState, action) => {
       return donelist
     default:
       return state
+
+    case GET_TODO_BY_ID:
+      return {
+        ...state,
+        todo: state.todos.find((todo) => {
+          return todo.id === action.payload
+        }),
+      }
   }
 }
 
