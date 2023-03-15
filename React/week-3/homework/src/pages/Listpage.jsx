@@ -30,6 +30,10 @@ function Listpage() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
+  const detailViewHandler = (id) => {
+    navigate(`/detail/${id}`)
+  }
+
   return (
     <div>
       <button onClick={() => navigate('/submit')}>작성하기</button>
@@ -46,6 +50,8 @@ function Listpage() {
               <br />
               <button onClick={() => dispatch(switchTodo(item.id))}>{item.isDone ? '취소' : '완료'}</button>
               <button onClick={() => dispatch(deleteTodo(item.id))}>삭제</button>
+              <br />
+              <button onClick={() => detailViewHandler(item.id)}>상세보기</button>
             </StyledCard>
           )
         })}
@@ -64,6 +70,8 @@ function Listpage() {
                 <br />
                 <button onClick={() => dispatch(switchTodo(item.id))}>{item.isDone ? '취소' : '완료'}</button>
                 <button onClick={() => dispatch(deleteTodo(item.id))}>삭제</button>
+                <br />
+                <button onClick={() => detailViewHandler(item.id)}>상세보기</button>
               </StyledCard>
             ) : null
           })}

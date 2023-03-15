@@ -1,12 +1,34 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useSelector } from 'react-redux'
+import { useNavigate, useParams } from 'react-router-dom'
 
 function Detailpage() {
-  return <div>Detail</div>
+  const navigate = useNavigate()
+  const params = useParams()
+
+  const detailTodo = useSelector((state) => {
+    return state.todos.filter((item) => item.id === params.id)
+  })
+
+  // .filter((item) => item.id === params.id) 이 부분을 따로 변수로
+  console.log(detailTodo)
+  return (
+    <div>
+      <div>
+        {detailTodo[0].id}
+        <br />
+        {detailTodo[0].userName}
+        <br />
+        {detailTodo[0].title}
+        <br />
+        {detailTodo[0].desc}
+        <br />
+        {detailTodo[0].isDone ? '완료' : '진행중'}
+        <br />
+        <button onClick={() => navigate('/list')}>뒤로가기</button>
+      </div>
+    </div>
+  )
 }
 
 export default Detailpage
-
-// 1. 순서를 어케함;
-// 2. 페이지 먼저 나눠놓고
-// 3. 페이지에 들어갈 컴포넌트 따로 만들고
-// 4. 마지막에 공통된거 나누자
