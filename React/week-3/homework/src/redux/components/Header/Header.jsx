@@ -1,10 +1,17 @@
 import React from 'react'
 import { StyledHeader } from './styles'
+import { AiFillHome } from 'react-icons/ai'
+import { useNavigate } from 'react-router-dom'
 
 function Header() {
+  const navigate = useNavigate()
   return (
     <StyledHeader>
-      <p>모두의 투두 리스트</p>
+      <AiFillHome
+        onClick={() => {
+          navigate('/')
+        }}
+      />
       <p>React App</p>
     </StyledHeader>
   )
