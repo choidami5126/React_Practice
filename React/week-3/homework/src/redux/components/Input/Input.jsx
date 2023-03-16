@@ -1,31 +1,28 @@
 import React from 'react'
 import { StyledForm } from './styles'
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { v4 as uuidv4 } from 'uuid'
-import { addTodo } from '../../modules/todos'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 function Input() {
   const [userName, setUserName] = useState()
   const [title, setTitle] = useState()
   const [desc, setDesc] = useState()
 
-  const disptch = useDispatch()
+  // const disptch = useDispatch()
   const navigate = useNavigate()
 
-  const SubmitButtonClickHandler = (e) => {
+  const SubmitButtonClickHandler = async (e) => {
     e.preventDefault()
 
     const newTodo = {
-      id: uuidv4(),
       userName,
       title,
       desc,
       isDone: false,
     }
 
-    disptch(addTodo(newTodo))
+    await axios.post('http://localhost:4001/todos', newTodo)
 
     setUserName('')
     setTitle('')
@@ -42,7 +39,7 @@ function Input() {
         내용
         <input value={desc} onChange={(e) => setDesc(e.target.value)} />
         <br />
-        <button type="submit">기록하기</button>
+        <button>기록하기</button>
         <br />
       </StyledForm>
       <button onClick={() => navigate('/list')}>리스트로 이동</button>
